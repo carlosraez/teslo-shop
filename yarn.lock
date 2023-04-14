@@ -251,6 +251,17 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
+"@mui/x-data-grid@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.npmjs.org/@mui/x-data-grid/-/x-data-grid-6.2.0.tgz#cc8cae0f76f8216ee3c8e8cb3b08280c2b164e5c"
+  integrity sha512-0SSnzpAtSOsrw/zqm+Nn5HwhwhWsbIYpzHB20is1FuH+hQnrAduHf1Twx9h+86a2n61C8qaDBcRyYZSXR1WBnw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
+    "@mui/utils" "^5.11.13"
+    clsx "^1.2.1"
+    prop-types "^15.8.1"
+    reselect "^4.1.7"
+
 "@next/env@13.2.4":
   version "13.2.4"
   resolved "https://registry.npmjs.org/@next/env/-/env-13.2.4.tgz#8b763700262b2445140a44a8c8d088cef676dbae"
@@ -694,6 +705,11 @@ regenerator-runtime@^0.13.11:
   version "0.13.11"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
+
+reselect@^4.1.7:
+  version "4.1.7"
+  resolved "https://registry.npmjs.org/reselect/-/reselect-4.1.7.tgz#56480d9ff3d3188970ee2b76527bd94a95567a42"
+  integrity sha512-Zu1xbUt3/OPwsXL46hvOOoQrap2azE7ZQbokq61BQfiXvhewsKDwhMeZjTX9sX0nvw1t/U5Audyn1I9P/m9z0A==
 
 resize-observer-polyfill@^1.5.1:
   version "1.5.1"
