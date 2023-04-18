@@ -2,6 +2,7 @@ import { ShopLayout } from "../components/layout/ShopLayout";
 import { Typography } from "@mui/material";
 import { ProductList } from "@/components/products";
 import { useProducts } from "@/hooks";
+import { FullScreenLoading } from "@/components/ui";
 
 export default function HomePage() {
   const { products, isLoading } = useProducts("/products");
@@ -17,7 +18,7 @@ export default function HomePage() {
       <Typography variant="h2" sx={{ marginBottom: 1 }}>
         Todos los productos
       </Typography>
-      {isLoading ? <h1>Cargando...</h1> : <ProductList products={products} />}
+      {isLoading ? <FullScreenLoading /> : <ProductList products={products} />}
     </ShopLayout>
   );
 }
