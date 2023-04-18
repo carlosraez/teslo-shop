@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mui/material";
 
-import { initialData } from "../../../database/products";
+import { initialData } from "../../database/products";
 import { ItemCounter } from "../ui";
 
 const productsInCart = [

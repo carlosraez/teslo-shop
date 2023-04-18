@@ -3,7 +3,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { ShopLayout } from "@/components/layout";
 import { ProductSlideshow, SizeSelector } from "@/components/products";
 import { ItemCounter } from "@/components/ui";
-import { initialData } from "../../../database/products";
+import { initialData } from "../../database/products";
 
 const product = initialData.products[0];
 

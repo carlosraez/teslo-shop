@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { db } from "../../../../database";
-import Product from "../../../../models/Product";
+import { db } from "../../../database";
+import Product from "../../../models/Product";
 import { IProduct } from "@/interfaces/products";
 
 type Data = { message: string } | IProduct | null;

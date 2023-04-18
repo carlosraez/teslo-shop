@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { connect, disconnect } from "../../../database/db";
-import Product from "../../../models/Product";
-import { db, seedDatabase } from "../../../database";
+import { connect, disconnect } from "../../database/db";
+import Product from "../../models/Product";
+import { db, seedDatabase } from "../../database";
 
 type Data = {
   message: string;

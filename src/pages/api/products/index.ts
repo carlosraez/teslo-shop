@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { db, SHOP_CONSTANTS } from "../../../../database";
-import Product from "../../../../models/Product";
+import { db, SHOP_CONSTANTS } from "../../../database";
+import Product from "../../../models/Product";
 import { IProduct } from "@/interfaces/products";
 
 type Data = { message: string } | IProduct[];
