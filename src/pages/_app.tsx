@@ -1,3 +1,4 @@
+import UIProvider from "@/context/ui/UIProvider";
 import "@/styles/globals.css";
 import { lightTheme } from "@/themes";
 import { CssBaseline } from "@mui/material";
@@ -13,10 +14,12 @@ export default function App({ Component, pageProps }: AppProps) {
           fetch(resource, init).then((res) => res.json()),
       }}
     >
-      <ThemeProvider theme={lightTheme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <UIProvider>
+        <ThemeProvider theme={lightTheme}>
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </UIProvider>
     </SWRConfig>
   );
 }

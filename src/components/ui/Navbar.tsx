@@ -15,8 +15,11 @@ import {
   ShoppingCart,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 export const Navbar = () => {
+  const { asPath } = useRouter();
+
   return (
     <AppBar>
       <Toolbar>
@@ -29,17 +32,23 @@ export const Navbar = () => {
         <Box flex={1} />
         <NextLink href="/category/men" passHref legacyBehavior>
           <Link>
-            <Button>Hombres</Button>
+            <Button color={asPath === "/category/men" ? "primary" : "info"}>
+              Hombres
+            </Button>
           </Link>
         </NextLink>
         <NextLink href="/category/women" passHref legacyBehavior>
           <Link>
-            <Button>Mujeres</Button>
+            <Button color={asPath === "/category/women" ? "primary" : "info"}>
+              Mujeres
+            </Button>
           </Link>
         </NextLink>
         <NextLink href="/category/kid" passHref legacyBehavior>
           <Link>
-            <Button>Niños</Button>
+            <Button color={asPath === "/category/kid" ? "primary" : "info"}>
+              Niños
+            </Button>
           </Link>
         </NextLink>
         <Box flex={1} />
