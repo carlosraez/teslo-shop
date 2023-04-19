@@ -1,13 +1,25 @@
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from "next";
 import { Box, Button, Grid, Typography } from "@mui/material";
 
 import { ShopLayout } from "@/components/layout";
 import { ProductSlideshow, SizeSelector } from "@/components/products";
 import { ItemCounter } from "@/components/ui";
-import { initialData } from "../../database/products";
+import { IProduct } from "@/interfaces/products";
+import { dbProducts } from "../../database";
 
-const product = initialData.products[0];
+interface Props {
+  product: IProduct;
+}
 
-const ProducPage = () => {
+const ProducPage: NextPage<Props> = ({ product }) => {
+  //const router = useRouter();
+  //const { products: product, isLoading } = useProducts(router.basePath);
+
   return (
     <ShopLayout title={product.title} pageDescription={product.description}>
       <Grid container spacing={3}>
@@ -45,6 +57,57 @@ const ProducPage = () => {
       </Grid>
     </ShopLayout>
   );
+};
+
+/*
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const { slug = "" } = params as { slug: string };
+  const product = await dbProducts.getProductBySlug(slug);
+
+  if (!product) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      product,
+    },
+  };
+};*/
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const ProductSlugs = await dbProducts.getAllProductsSlugs();
+  const paths = ProductSlugs.map(({ slug }) => ({ params: { slug } }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug = "" } = params as { slug: string };
+  const product = await dbProducts.getProductBySlug(slug);
+
+  // Devuelve un objeto con las props que se pasan al componente
+  if (!product) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      product,
+    },
+  };
 };
 
 export default ProducPage;
